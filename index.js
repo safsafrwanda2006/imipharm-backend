@@ -60,11 +60,12 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,
+      secure: false,
       httpOnly: true,
-      sameSite: "none", // 🔥 مهم
+      sameSite: "lax",
+      maxAge: 1000 * 60 * 60 * 24,
     },
-  })
+  }),
 );
 
 // const db = mysql2.createConnection({
