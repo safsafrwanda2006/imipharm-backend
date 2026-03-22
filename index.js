@@ -59,12 +59,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,
+      secure: true,
       httpOnly: true,
-      sameSite: "lax",
-      maxAge: 1000 * 60 * 60 * 24,
+      sameSite: "none", // 🔥 مهم
     },
-  }),
+  })
 );
 
 // const db = mysql2.createConnection({
