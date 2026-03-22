@@ -45,7 +45,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://imipharm.vercel.app"],
+    origin: "https://imipharm.vercel.app",
     credentials: true,
   }),
 );
