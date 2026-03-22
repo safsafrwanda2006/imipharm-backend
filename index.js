@@ -56,13 +56,13 @@ app.use(cookieParser());
 app.use(
   session({
     name: "sessionId",
-    secret: "secret-key",
+    secret: process.env.SESSION_SECRET || "secret-key",
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,
+      secure: process.env.NODE_ENV === "production", // true بس في prod
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 1000 * 60 * 60 * 24,
     },
   }),
