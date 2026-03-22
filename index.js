@@ -17,7 +17,7 @@ import nodemailer from "nodemailer";
 
 dotenv.config();
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://imipharm.vercel.app/";
 const RESET_TOKEN_TTL_MIN = Number(process.env.RESET_TOKEN_TTL_MIN || 60);
 const REMEMBER_DAYS = Number(process.env.REMEMBER_DAYS || 30);
 
@@ -45,7 +45,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://imipharm.vercel.app/",
     credentials: true,
   }),
 );
